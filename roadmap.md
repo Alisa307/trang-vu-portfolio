@@ -13,4 +13,4 @@
 - [x] Update About portrait and emphasis
 - [x] Replace Germany projects and add country flags
 - [x] Add the supplied BCG Matrix detail to Project 03
-- [ ] Verify navigation, dialog, and mobile layout
+- [x] Verify navigation, dialog, and mobile layout

@@ -40,7 +40,7 @@ const countryFlags: Record<string, string> = { Germany: "🇩🇪", Thailand: "�
 
 function Index() {
   return <main>
-    <section id="about" className="mx-auto grid min-h-[calc(100vh-76px)] max-w-[1440px] items-center gap-12 px-5 py-14 lg:grid-cols-[1fr_1fr] lg:gap-20 lg:px-10 lg:py-20">
+    <section id="about" className="mx-auto grid max-w-[1440px] items-center gap-12 px-5 py-14 lg:grid-cols-[1fr_1fr] lg:gap-20 lg:px-10 lg:py-20">
       <div className="overflow-hidden border border-border bg-background shadow-lg">
         <img src={profileImage} alt="Trang Vu" width={768} height={768} className="aspect-[4/3] w-full object-cover object-top grayscale" />
       </div>
