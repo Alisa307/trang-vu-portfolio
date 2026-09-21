@@ -9,8 +9,8 @@
 
 ## One-page revision
 
-- [ ] Consolidate the five portfolio areas into one scrolling page
-- [ ] Update About portrait and emphasis
-- [ ] Replace Germany projects and add country flags
-- [ ] Add the supplied BCG Matrix detail to Project 03
+- [x] Consolidate the five portfolio areas into one scrolling page
+- [x] Update About portrait and emphasis
+- [x] Replace Germany projects and add country flags
+- [x] Add the supplied BCG Matrix detail to Project 03
 - [ ] Verify navigation, dialog, and mobile layout

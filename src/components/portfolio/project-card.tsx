@@ -14,6 +14,8 @@ export type Project = {
   discipline: string;
   summary: string;
   image: string;
+  logo?: string;
+  detailImage?: string;
   star: { situation: string; task: string; action: string; results: string };
 };
 
@@ -26,7 +28,11 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
       <div className="grid grid-cols-[auto_minmax(0,1fr)] gap-4 border-b border-border py-5">
         <span className="font-display text-2xl text-primary">0{index + 1}</span>
         <div className="min-w-0">
-          <p className="eyebrow">{project.discipline}</p>
+          {project.logo ? (
+            <img src={project.logo} alt={project.discipline} className="h-6 w-auto object-contain object-left" />
+          ) : (
+            <p className="eyebrow">{project.discipline}</p>
+          )}
           <h3 className="mt-2 font-display text-3xl leading-tight">{project.title}</h3>
           <p className="mt-3 text-sm leading-6 text-muted-foreground">{project.summary}</p>
           <Dialog>
@@ -41,14 +47,20 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
                 <DialogTitle className="mt-3 font-display text-4xl font-normal leading-tight sm:text-5xl">{project.title}</DialogTitle>
                 <DialogDescription className="mt-3 max-w-xl leading-6">Preview content to demonstrate the final case-study format.</DialogDescription>
               </DialogHeader>
-              <div className="grid gap-px bg-border sm:grid-cols-2">
-                {Object.entries(project.star).map(([key, value], i) => (
-                  <section key={key} className="bg-background p-7 sm:p-9">
-                    <p className="eyebrow"><span className="mr-3 text-primary">0{i + 1}</span>{key}</p>
-                    <p className="mt-4 text-sm leading-6 text-muted-foreground">{value}</p>
-                  </section>
-                ))}
-              </div>
+              {project.detailImage ? (
+                <div className="bg-background p-4 sm:p-7">
+                  <img src={project.detailImage} alt={`STAR case study for ${project.title}`} className="h-auto w-full" />
+                </div>
+              ) : (
+                <div className="grid gap-px bg-border sm:grid-cols-2">
+                  {Object.entries(project.star).map(([key, value], i) => (
+                    <section key={key} className="bg-background p-7 sm:p-9">
+                      <p className="eyebrow"><span className="mr-3 text-primary">0{i + 1}</span>{key}</p>
+                      <p className="mt-4 text-sm leading-6 text-muted-foreground">{value}</p>
+                    </section>
+                  ))}
+                </div>
+              )}
             </DialogContent>
           </Dialog>
         </div>
