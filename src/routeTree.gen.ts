@@ -10,102 +10,33 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as AboutRouteImport } from './routes/about'
-import { Route as EducationResearchRouteImport } from './routes/education-research'
-import { Route as PersonalProjectsRouteImport } from './routes/personal-projects'
-import { Route as SelfStudyRouteImport } from './routes/self-study'
-import { Route as WorkProjectsRouteImport } from './routes/work-projects'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EducationResearchRoute = EducationResearchRouteImport.update({
-  id: '/education-research',
-  path: '/education-research',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PersonalProjectsRoute = PersonalProjectsRouteImport.update({
-  id: '/personal-projects',
-  path: '/personal-projects',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SelfStudyRoute = SelfStudyRouteImport.update({
-  id: '/self-study',
-  path: '/self-study',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const WorkProjectsRoute = WorkProjectsRouteImport.update({
-  id: '/work-projects',
-  path: '/work-projects',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/education-research': typeof EducationResearchRoute
-  '/personal-projects': typeof PersonalProjectsRoute
-  '/self-study': typeof SelfStudyRoute
-  '/work-projects': typeof WorkProjectsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/education-research': typeof EducationResearchRoute
-  '/personal-projects': typeof PersonalProjectsRoute
-  '/self-study': typeof SelfStudyRoute
-  '/work-projects': typeof WorkProjectsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/education-research': typeof EducationResearchRoute
-  '/personal-projects': typeof PersonalProjectsRoute
-  '/self-study': typeof SelfStudyRoute
-  '/work-projects': typeof WorkProjectsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/about'
-    | '/education-research'
-    | '/personal-projects'
-    | '/self-study'
-    | '/work-projects'
+  fullPaths: '/'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/about'
-    | '/education-research'
-    | '/personal-projects'
-    | '/self-study'
-    | '/work-projects'
-  id:
-    | '__root__'
-    | '/'
-    | '/about'
-    | '/education-research'
-    | '/personal-projects'
-    | '/self-study'
-    | '/work-projects'
+  to: '/'
+  id: '__root__' | '/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
-  EducationResearchRoute: typeof EducationResearchRoute
-  PersonalProjectsRoute: typeof PersonalProjectsRoute
-  SelfStudyRoute: typeof SelfStudyRoute
-  WorkProjectsRoute: typeof WorkProjectsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -117,51 +48,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/education-research': {
-      id: '/education-research'
-      path: '/education-research'
-      fullPath: '/education-research'
-      preLoaderRoute: typeof EducationResearchRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/personal-projects': {
-      id: '/personal-projects'
-      path: '/personal-projects'
-      fullPath: '/personal-projects'
-      preLoaderRoute: typeof PersonalProjectsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/self-study': {
-      id: '/self-study'
-      path: '/self-study'
-      fullPath: '/self-study'
-      preLoaderRoute: typeof SelfStudyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/work-projects': {
-      id: '/work-projects'
-      path: '/work-projects'
-      fullPath: '/work-projects'
-      preLoaderRoute: typeof WorkProjectsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
-  EducationResearchRoute: EducationResearchRoute,
-  PersonalProjectsRoute: PersonalProjectsRoute,
-  SelfStudyRoute: SelfStudyRoute,
-  WorkProjectsRoute: WorkProjectsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
