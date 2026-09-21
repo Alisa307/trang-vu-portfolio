@@ -6,3 +6,11 @@
 - [x] Add accessible STAR project detail pop-ups
 - [x] Apply the white-and-beige editorial visual direction
 - [x] Verify all pages and interactions in the live preview
+
+## One-page revision
+
+- [ ] Consolidate the five portfolio areas into one scrolling page
+- [ ] Update About portrait and emphasis
+- [ ] Replace Germany projects and add country flags
+- [ ] Add the supplied BCG Matrix detail to Project 03
+- [ ] Verify navigation, dialog, and mobile layout
