@@ -5,4 +5,4 @@
 - [x] Add Germany, Thailand, and Vietnam work sections with three projects each
 - [x] Add accessible STAR project detail pop-ups
 - [x] Apply the white-and-beige editorial visual direction
-- [ ] Verify all pages and interactions in the live preview
+- [x] Verify all pages and interactions in the live preview
