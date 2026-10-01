@@ -8,3 +8,6 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep the portfolio as one scrolling route with in-page navigation, because its five sections form one continuous personal narrative.
+- Present work projects as country-level tabbed case studies, because visitors should compare projects without leaving the page.
