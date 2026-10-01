@@ -39,7 +39,7 @@ const topics = [
   ["Global Growth", "Market entry, localization, cross-cultural behavior, and durable commercial systems.", "07 notes"],
 ];
 
-const countryFlags: Record<string, string> = { Germany: "🇩🇪", Thailand: "🇹🇭", Vietnam: "🇻🇳" };
+const countryFlags: Record<string, string> = { Germany: germanyFlag, Thailand: thailandFlag, Vietnam: vietnamFlag };
 
 function Index() {
   return <main>
@@ -67,7 +67,7 @@ function Index() {
             <div className="mb-4 grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-4 sm:gap-7">
               <span className="text-xs font-semibold text-primary">0{countryIndex + 1}</span>
               <h3 className="font-display text-4xl sm:text-6xl">{country}</h3>
-              <img src={{ Germany: germanyFlag, Thailand: thailandFlag, Vietnam: vietnamFlag }[country]} alt={`${country} flag`} className="h-14 w-20 object-cover mix-blend-multiply sm:h-16 sm:w-24" />
+              <img src={countryFlags[country]} alt={`${country} flag`} className="h-14 w-20 object-cover mix-blend-multiply sm:h-16 sm:w-24" />
             </div>
             <ProjectShowcase projects={projects} />
           </div>
