@@ -3,8 +3,11 @@ import { ArrowUpRight } from "lucide-react";
 import profileImage from "@/assets/trang-vu-profile-bw.jpg";
 import dataImage from "@/assets/project-data.jpg";
 import growthImage from "@/assets/project-growth.jpg";
-import { ProjectCard } from "@/components/portfolio/project-card";
+import { ProjectShowcase } from "@/components/portfolio/project-showcase";
 import { countryProjects } from "@/lib/portfolio-data";
+import germanyFlag from "@/assets/flag-germany.png";
+import thailandFlag from "@/assets/flag-thailand.png";
+import vietnamFlag from "@/assets/flag-vietnam.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
@@ -47,29 +50,26 @@ function Index() {
       <div>
         <p className="eyebrow">About</p>
         <h1 className="mt-5 font-display text-5xl leading-tight sm:text-7xl">Hi, I’m Trang Vu!</h1>
-        <p className="mt-7 max-w-2xl text-sm leading-7 text-muted-foreground sm:text-base">
-          <strong className="font-semibold text-foreground">6+ years</strong> of experience across Product Management, CRM Strategy, and Sales Operations in <strong className="font-semibold text-foreground">Asia and Europe</strong> for companies in Finance, Healthcare, Retail, E-commerce &amp; SaaS.
+        <p className="mt-7 max-w-2xl text-base leading-7 text-foreground sm:text-lg">
+          <strong className="font-semibold">5+ years</strong> of work experience across Portfolio Management, CRM Strategy, and Sales Operations for <strong className="font-semibold">Healthcare, Retail, E-commerce, and SaaS</strong> businesses in <strong className="font-semibold">Asia and Europe</strong>.
         </p>
-        <p className="mt-6 max-w-2xl text-xl leading-8 text-foreground sm:text-2xl">I help companies grow sustainably and scale globally by turning <strong>Data &amp; AI</strong> into decisions that stick.</p>
+        <p className="mt-6 max-w-2xl text-base leading-7 text-foreground sm:text-lg">Thinking like <strong className="font-semibold">an entrepreneur</strong> and acting like <strong className="font-semibold">an owner</strong>, I turn <strong className="font-semibold">research, data, and AI</strong> into <strong className="font-semibold">commercial growth</strong> and <strong className="font-semibold">cross-market scale</strong>.</p>
       </div>
     </section>
 
     <section id="work-projects" className="border-t border-border bg-secondary">
-      <div className="mx-auto max-w-[1440px] px-5 py-20 lg:px-10 lg:py-28">
-        <div className="max-w-3xl">
-          <p className="eyebrow">Selected work · 03 markets</p>
-          <h2 className="mt-5 font-display text-5xl leading-tight sm:text-7xl">Work Projects</h2>
-          <p className="mt-6 max-w-2xl text-base leading-7 text-muted-foreground">Strategy translated into action across product, CRM, sales operations, data, and AI.</p>
-        </div>
+      <div className="mx-auto max-w-[1440px] px-5 pb-8 pt-16 lg:px-10 lg:pb-10 lg:pt-20">
+        <h2 className="font-display text-5xl leading-tight sm:text-7xl">Work Projects</h2>
       </div>
       {Object.entries(countryProjects).map(([country, projects], countryIndex) => (
         <div key={country} className={countryIndex % 2 ? "bg-background" : "bg-secondary"}>
-          <div className="mx-auto max-w-[1440px] px-5 py-20 lg:px-10 lg:py-24">
-            <div className="mb-10 grid gap-3 border-b border-border pb-5 sm:grid-cols-[auto_1fr] sm:items-end sm:gap-8">
+          <div className="mx-auto max-w-[1440px] px-5 py-10 lg:px-10 lg:py-14">
+            <div className="mb-4 grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-4 sm:gap-7">
               <span className="text-xs font-semibold text-primary">0{countryIndex + 1}</span>
-              <h3 className="font-display text-5xl sm:text-6xl">{country} <span aria-hidden="true" className="text-4xl">{countryFlags[country]}</span></h3>
+              <h3 className="font-display text-4xl sm:text-6xl">{country}</h3>
+              <img src={{ Germany: germanyFlag, Thailand: thailandFlag, Vietnam: vietnamFlag }[country]} alt={`${country} flag`} className="h-14 w-20 object-cover mix-blend-multiply sm:h-16 sm:w-24" />
             </div>
-            <div className="grid gap-10 md:grid-cols-3">{projects.map((project, index) => <ProjectCard key={project.title} project={project} index={index} />)}</div>
+            <ProjectShowcase projects={projects} />
           </div>
         </div>
       ))}
