@@ -14,3 +14,14 @@
 - [x] Replace Germany projects and add country flags
 - [x] Add the supplied BCG Matrix detail to Project 03
 - [x] Verify navigation, dialog, and mobile layout
+
+## Interactive work-project revision
+
+- [ ] Replace the About copy and emphasis with the supplied wording
+- [ ] Tighten the Work Projects heading and country spacing
+- [ ] Add supplied country flags with backgrounds blended into the page
+- [ ] Replace project image cards with three selectable project tabs per country
+- [ ] Build inline STAR case-study panels with adapted project visuals
+- [ ] Add the supplied Germany and Thailand project details
+- [ ] Confirm or retain the Vietnam project content
+- [ ] Verify desktop and mobile project interactions
