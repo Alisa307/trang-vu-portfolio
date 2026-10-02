@@ -1,6 +1,6 @@
 import { BarChart3, Database, HeartPulse, LayoutDashboard, LineChart, MailCheck, Network, ScanSearch, UsersRound } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import type { Project } from "@/lib/portfolio-data";
+import type { Collage as CollageData, Project } from "@/lib/portfolio-data";
 
 const icons = {
   health: HeartPulse,
@@ -14,36 +14,87 @@ const icons = {
   sales: Database,
 };
 
+const imageShadow = "rounded-lg shadow-[0_24px_60px_-12px_rgba(20,20,30,0.3),0_6px_18px_-6px_rgba(20,20,30,0.15)]";
+const collageShadow = "rounded-md shadow-[0_14px_36px_-10px_rgba(20,20,30,0.32),0_3px_10px_-4px_rgba(20,20,30,0.15)]";
+
+export function Collage({ collage }: { collage: CollageData }) {
+  return (
+    <div className="mx-auto w-full [container-type:inline-size]" style={{ maxWidth: `min(38rem, ${(collage.aspect * 36).toFixed(1)}rem)` }}>
+      <div className="relative w-full" style={{ aspectRatio: collage.aspect }}>
+        {collage.items.map((item, index) => {
+          const box = { left: `${item.x}%`, top: `${item.y}%`, width: `${item.w}%`, height: `${item.h}%` };
+          if ("text" in item) {
+            return (
+              <p key={index} className="absolute flex items-center justify-center text-center italic text-muted-foreground" style={{ ...box, fontSize: "2.4cqw" }}>
+                {item.text}
+              </p>
+            );
+          }
+          const { l = 0, t = 0, r = 0, b = 0 } = item.crop ?? {};
+          const visibleW = 1 - l - r;
+          const visibleH = 1 - t - b;
+          return (
+            <div key={index} className={`absolute overflow-hidden bg-background ${collageShadow}`} style={box}>
+              <img
+                src={item.src}
+                alt={item.alt}
+                loading="lazy"
+                className="absolute max-w-none"
+                style={{ width: `${100 / visibleW}%`, height: `${100 / visibleH}%`, left: `${(-l / visibleW) * 100}%`, top: `${(-t / visibleH) * 100}%` }}
+              />
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+export function Emphasis({ text }: { text: string }) {
+  return (
+    <>
+      {text.split("**").map((part, index) => (index % 2 ? <strong key={index} className="font-semibold text-foreground">{part}</strong> : part))}
+    </>
+  );
+}
+
 function ProjectPanel({ project }: { project: Project }) {
   return (
-    <div className="grid gap-10 border-t border-border py-10 lg:grid-cols-[minmax(17rem,0.8fr)_minmax(0,1.5fr)] lg:gap-16 lg:py-14">
-      <div className="grid content-start gap-7">
-        {Object.entries(project.star).map(([label, text], index) => (
-          <section key={label} className="grid grid-cols-[2.5rem_1fr] gap-4">
-            <span className="flex size-10 items-center justify-center rounded-full bg-accent text-sm font-semibold text-accent-foreground">
-              {index + 1}
-            </span>
-            <div>
-              <h4 className="text-sm font-semibold capitalize text-foreground">{label}</h4>
-              <p className="mt-1 text-sm leading-6 text-muted-foreground">{text}</p>
-            </div>
-          </section>
-        ))}
-      </div>
-
-      <div className="min-w-0 self-center">
-        {project.images.length > 1 ? (
-          <div className="grid gap-4 sm:grid-cols-2">
-            {project.images.map((image, index) => (
-              <div key={image} className="overflow-hidden bg-muted">
-                <img src={image} alt={`${project.title} dashboard view ${index + 1}`} className="aspect-[16/10] h-full w-full object-cover object-top" />
-              </div>
+    <div className="grid gap-12 border-t border-border py-12 lg:grid-cols-2 lg:items-center lg:gap-20 lg:py-16">
+      <div className="grid content-center gap-10">
+        {project.headline && (
+          <div>
+            <h4 className="text-[1.2rem] font-bold leading-snug text-foreground">{project.headline.title}</h4>
+            <ul className="mt-4 list-disc space-y-2 pl-5 text-base leading-7 text-muted-foreground">
+              {project.headline.points.map((point) => (
+                <li key={point}><Emphasis text={point} /></li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {project.star && (
+          <div className="grid gap-11">
+            {Object.entries(project.star).map(([label, text], index) => (
+              <section key={label} className="grid grid-cols-[2.75rem_1fr] gap-5">
+                <span className="flex size-11 items-center justify-center rounded-full bg-accent text-sm font-semibold text-accent-foreground">
+                  {index + 1}
+                </span>
+                <div>
+                  <h4 className="text-base font-semibold capitalize text-foreground">{label}</h4>
+                  <p className="mt-1 text-base leading-7 text-muted-foreground">{text}</p>
+                </div>
+              </section>
             ))}
           </div>
+        )}
+      </div>
+
+      <div className="min-w-0">
+        <h4 className="mb-5 text-center font-display text-2xl text-foreground sm:text-3xl">{project.imageTitle ?? project.title}</h4>
+        {project.collage ? (
+          <Collage collage={project.collage} />
         ) : (
-          <div className="overflow-hidden bg-muted">
-            <img src={project.images[0]} alt={`${project.title} project visual`} className="aspect-[7/5] w-full object-contain" />
-          </div>
+          <img src={project.images?.[0]} alt={`${project.title} project visual`} className={`mx-auto h-auto max-h-[36rem] w-auto max-w-full ${imageShadow}`} />
         )}
       </div>
     </div>

@@ -2,8 +2,8 @@ const links = [
   { href: "#about", label: "About" },
   { href: "#work-projects", label: "Work Projects" },
   { href: "#education-research", label: "Education & Research" },
-  { href: "#personal-projects", label: "Personal Projects" },
-  { href: "#self-study", label: "Self-Study" },
+  { href: "#entrepreneurial-projects", label: "Entrepreneurial Projects" },
+  { href: "#reference-contact", label: "Reference & Contact" },
 ];
 
 export function SiteHeader() {
