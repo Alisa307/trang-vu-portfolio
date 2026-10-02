@@ -33,4 +33,4 @@
 - [x] Remove bullet-point copy from the Portfolio Healthcheck artwork
 - [x] Update the MediFlow role to Co-developer
 - [x] Rename the No More Lies image title to Digital Marketing Workshop
-- [ ] Verify the affected content and imagery on desktop and mobile
+- [x] Verify the affected content and imagery on desktop and mobile
