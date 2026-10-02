@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import profileImageAsset from "@/assets/trang-vu-profile.jpg.asset.json";
+import profileImageAsset from "@/assets/trang-vu-profile-bw.jpg";
 import { ProjectShowcase } from "@/components/portfolio/project-showcase";
 import { EducationList, ProfileShowcase } from "@/components/portfolio/education-research";
 import { ContactBand, ReferenceList } from "@/components/portfolio/reference-contact";
