@@ -1,4 +1,4 @@
-import healthcheckProcessImage from "@/assets/project-sap-healthcheck-process.jpg";
+import healthcheckProcessImage from "@/assets/project-sap-healthcheck-process-clean.jpg";
 import masterDashboardImage from "@/assets/project-sap-master-dashboard.jpg";
 import bcgMatrixImage from "@/assets/project-sap-bcg-matrix.png";
 import sapLogo from "@/assets/logo-sap.png";
@@ -67,8 +67,8 @@ export const workSections: WorkSection[] = [
     name: "SAP SE Germany",
     logos: [{ src: sapLogo, alt: "SAP" }],
     projects: [
-      { title: "Portfolio Healthcheck Program", icon: "health", images: [healthcheckProcessImage], imageTitle: "Portfolio Healthcheck Process", headline: { title: "Supported the steering of Portfolio Healthcheck across 9 Lines of Business", points: ["Collaborated with portfolio partners to design **Portfolio Healthcheck Process** and consolidate product insights.", "Analyzed commercial data to build **Product Watchlist** and recommend **lift and shift decisions**."] } },
       { title: "Portfolio Master Dashboard", icon: "dashboard", images: [masterDashboardImage], imageTitle: "Portfolio Master Dashboard", headline: { title: "Built the Portfolio Master Dashboard for product trend and competitor monitoring", points: ["Integrated **10+ data sources** into Excel and SAP Data Cloud.", "Provided Senior Executives with a **unified portfolio view** and investment priorities."] } },
+      { title: "Portfolio Healthcheck Program", icon: "health", images: [healthcheckProcessImage], imageTitle: "Portfolio Healthcheck Process", headline: { title: "Supported the steering of Portfolio Healthcheck across 9 Lines of Business", points: ["Collaborated with portfolio partners to design **Portfolio Healthcheck Process** and consolidate product insights.", "Analyzed commercial data to build **Product Watchlist** and recommend **lift and shift decisions**."] } },
       { title: "BCG Matrix of Customer Growth", icon: "matrix", images: [bcgMatrixImage], star: { situation: "SAP's portfolio spans 1,000+ products, with no unified view of which products deserve continued investment and which are underperforming.", action: "Mapped products onto a BCG Matrix, positioning Stars (invest), Cash Cows (harvest), Question Marks (evaluate), and Poor Dogs (divest) to produce a performance benchmark.", result: "Identified which products to accelerate, maintain, and exit across the portfolio." } },
     ],
   },
@@ -231,7 +231,7 @@ export const entrepreneurialProjects: ProfileProject[] = [
     icon: "ai",
     org: "MediFlow",
     location: "Darmstadt, Germany",
-    role: "Co-founder & Strategy Executive",
+    role: "Co-developer & Strategy Executive",
     note: "Top 2 best Startup Ideas in Darmstadt Community 2026",
     points: [
       "**Co-developed MediFlow, a patient check-in AI solution for hospitals** with an adaptive symptom questionnaire based on patient data, contributing to reduce language barrier and the clinical administration time.",
@@ -269,7 +269,7 @@ export const entrepreneurialProjects: ProfileProject[] = [
     role: "Co-founder and Marketing Trainer",
     points: ["**Delivered 20+ digital marketing courses for 600+ university students in Vietnam**, equipping them with job-ready skills to enter workforce."],
     image: noMoreLiesPosterImage,
-    imageTitle: "No More Lies Marketing Community",
+    imageTitle: "Digital Marketing Workshop",
     grayscale: true,
   },
 ];

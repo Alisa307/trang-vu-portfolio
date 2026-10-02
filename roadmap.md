@@ -25,3 +25,12 @@
 - [ ] Add the supplied Germany and Thailand project details
 - [ ] Confirm or retain the Vietnam project content
 - [ ] Verify desktop and mobile project interactions
+
+## Content and image update
+
+- [x] Use the supplied color portrait in the current About image frame
+- [x] Move Portfolio Master Dashboard before Portfolio Healthcheck Program
+- [x] Remove bullet-point copy from the Portfolio Healthcheck artwork
+- [x] Update the MediFlow role to Co-developer
+- [x] Rename the No More Lies image title to Digital Marketing Workshop
+- [ ] Verify the affected content and imagery on desktop and mobile
