@@ -51,7 +51,7 @@ export type Project = {
   collage?: Collage;
   imageTitle?: string;
   headline?: { title: string; points: string[] };
-  star?: { situation: string; action: string; result: string };
+  star?: { situation: string | string[]; action: string | string[]; result: string | string[] };
 };
 
 export type WorkSection = {
@@ -69,7 +69,7 @@ export const workSections: WorkSection[] = [
     projects: [
       { title: "Portfolio Master Dashboard", icon: "dashboard", images: [masterDashboardImage], imageTitle: "Portfolio Master Dashboard", headline: { title: "Built the Portfolio Master Dashboard for product trend and competitor monitoring", points: ["Integrated **10+ data sources** into Excel and SAP Data Cloud.", "Provided Senior Executives with a **unified portfolio view** and investment priorities."] } },
       { title: "Portfolio Healthcheck Program", icon: "health", images: [healthcheckProcessImage], imageTitle: "Portfolio Healthcheck Process", headline: { title: "Supported the steering of Portfolio Healthcheck across 9 Lines of Business", points: ["Collaborated with portfolio partners to design **Portfolio Healthcheck Process** and consolidate product insights.", "Analyzed commercial data to build **Product Watchlist** and recommend **lift and shift decisions**."] } },
-      { title: "BCG Matrix of Customer Growth", icon: "matrix", images: [bcgMatrixImage], star: { situation: "SAP's portfolio spans 1,000+ products, with no unified view of which products deserve continued investment and which are underperforming.", action: "Mapped products onto a BCG Matrix, positioning Stars (invest), Cash Cows (harvest), Question Marks (evaluate), and Poor Dogs (divest) to produce a performance benchmark.", result: "Identified which products to accelerate, maintain, and exit across the portfolio." } },
+      { title: "BCG Matrix of Customer Growth", icon: "matrix", images: [bcgMatrixImage], headline: { title: "Benchmarked 1,000+ Cloud ERP products in the monthly Portfolio Review", points: ["Mapped products onto a **BCG Matrix** (Stars, Cash Cows, Question Marks, Poor Dogs) to create a unified **performance benchmark** across the portfolio.", "Identified which products to **accelerate, maintain, or exit**, enabling Product Managers to make **data-driven investment decisions**."] } },
     ],
   },
   {
@@ -80,18 +80,18 @@ export const workSections: WorkSection[] = [
       { src: salesforceLogo, alt: "Salesforce" },
     ],
     projects: [
-      { title: "Salesforce Data Cloud Data Modeling", icon: "model", collage: { aspect: 1.102, items: [
+      { title: "Salesforce Data Cloud", icon: "model", collage: { aspect: 1.102, items: [
         { src: beryl8DataCloudImage2, alt: "Data Cloud customer profile", x: 2.64, y: 2.91, w: 94.27, h: 37.33, crop: { b: 0.14493 } },
         { src: beryl8DataCloudImage1, alt: "Data Lake object mapping", x: 2.64, y: 42.25, w: 94.73, h: 54.84 },
-      ] }, star: { situation: "A client needed to unify customer data across ERP, CRM, Marketing Cloud, events, and HCP systems to unlock advanced segmentation.", action: "Ran workshops with IT and business teams to identify data sources, transformed data into DLOs and built Profile and Engagement DMOs, and configured reconciliation rules to merge duplicate customer profiles.", result: "Contributed to securing the client deal, and learned the importance of data auditing and data mapping prioritization." } },
-      { title: "Unified Customer 360 Profile", icon: "customer", collage: { aspect: 1.125, items: [
+      ] }, star: { situation: "Unify **multiple data sources** (ERP, Sales Cloud, Marketing Cloud, Events) into Salesforce Data Cloud to unlock **advanced segmentation**.", action: "Ran workshops with IT teams to identify **data sources**, transformed and modeled data into Data Lakes and configured **reconciliation rules** to merge customer profiles.", result: "Contributed to securing the client deal, and learned the importance of **data auditing and data mapping prioritization**." } },
+      { title: "Customer 360 Profile", icon: "customer", collage: { aspect: 1.125, items: [
         { src: beryl8Customer360Image1, alt: "Individual Customer 360 summary", x: 2.64, y: 2.97, w: 94.71, h: 59.88 },
         { src: beryl8Customer360Image2, alt: "Convert Lead flow", x: 2.64, y: 65.89, w: 94.71, h: 31.13 },
-      ] }, star: { situation: "A client wanted to enrich customer profiles in Sales Cloud to closely track sales activity and send targeted marketing content.", action: "Mapped SAP data objects to Salesforce data objects, built and tested a middleware REST API with developers, and configured Journey Builder event triggers around customer segments.", result: "Finished the project in four months, and learned how to configure API calls and engagement event triggers." } },
-      { title: "Pardot Automation Scoring and Grading", icon: "automation", collage: { aspect: 1.203, items: [
+      ] }, star: { situation: "Built **customer 360 profile** in Sales Cloud to closely track **sales activity** and send **targeted marketing content**.", action: "Mapped **Data Objects** of SAP and Salesforce, built and tested **REST API** with developers, and configured Journey Builder with **event triggers & customer segments**.", result: "Delivered the project in **4 months**, and learned how to configure **API calls** and **event triggers**." } },
+      { title: "Salesforce B2B Marketing", icon: "automation", collage: { aspect: 1.203, items: [
         { src: beryl8PardotImage1, alt: "Pardot automation rules for prospects", x: 2.61, y: 3.13, w: 94.37, h: 57.96 },
         { src: beryl8PardotImage2, alt: "Pardot NPS dashboard", x: 3.27, y: 67.75, w: 94.13, h: 29.12, crop: { b: 0.54335 } },
-      ] }, star: { situation: "A client wanted to implement lead scoring and segmentation in Pardot B2B Marketing and centralize pipeline reporting in Tableau.", action: "Defined scoring models based on sales activity, built automation conditions to trigger email sends, collected users' requirements, and designed and visualized the data model in Tableau.", result: "Received strong feedback and extended project contracts from the client, and learned to configure Pardot and Tableau with localized rules for different markets." } },
+      ] }, star: { situation: "Implemented **Lead Scoring and Customer Segmentation** and centralized **Sales Pipeline** report in Tableau.", action: "Defined **scoring models** based on sales activity, built automations to trigger **email sends**, and implemented the **data model & visualization** in Tableau.", result: "Received good feedback and **extended project contracts** from the client." } },
     ],
   },
   {
@@ -99,9 +99,9 @@ export const workSections: WorkSection[] = [
     name: "Shopee Vietnam",
     logos: [{ src: shopeeLogo, alt: "Shopee" }],
     projects: [
-      { title: "Program Strategy and Vision Design", icon: "value", collage: { aspect: 0.984, items: [
+      { title: "Program Strategy Steering", icon: "value", collage: { aspect: 0.984, items: [
         { src: shopeeStrategyImage, alt: "Shopee Loyalty program screens", x: 3.05, y: 3, w: 93.9, h: 94 },
-      ] }, star: { situation: "After a low-performing first launch, leadership challenged the team on how and when the Loyalty Program could become a profitable product and open a new revenue stream.", action: "Worked with User Research, CS, and BI teams on surveys, interviews, and competitor analysis; redesigned tier qualification criteria to grow the Gold and Platinum base; and introduced a paid Tailored Voucher Package of exclusive, tier-specific vouchers.", result: "Achieved a sales uplift and significantly higher retention with the new revenue source, and learned the iterative learning cycle of building product-market fit." } },
+      ] }, star: { situation: "Drove Loyalty Program in Vietnam to become **a profitable product** and explore **new revenue streams**.", action: ["Collaborated with User Research, CS, and BI teams on **surveys, interviews, and market analysis.**", "Redesigned **tier qualification criteria** to grow high-tier users (Gold & Platinum).", "Introduced **an exclusive Voucher Package** for high-tier users."], result: "Achieved **a sales uplift** and significantly **higher retention** with the new revenue sources, and learned the iterative learning cycle of building **product-market fit**." } },
       { title: "Global Extension to 4 Markets", icon: "market", collage: { aspect: 1.043, items: [
         { src: shopeeGlobalThailandImage, alt: "Loyalty Thailand", x: 2.77, y: 2.89, w: 37.52, h: 36.92 },
         { src: shopeeGlobalIndonesiaImage, alt: "Loyalty Indonesia", x: 43.15, y: 2.89, w: 54.08, h: 36.92, crop: { l: 0.07645, r: 0.08154 } },
@@ -109,13 +109,13 @@ export const workSections: WorkSection[] = [
         { text: "Loyalty Thailand", x: 7.99, y: 40.41, w: 26.03, h: 4.77 },
         { text: "Loyalty Indonesia", x: 51.58, y: 40.41, w: 37.52, h: 4.77 },
         { text: "Loyalty Taiwan", x: 34.38, y: 92.34, w: 26.03, h: 4.77 },
-      ] }, star: { situation: "Following the success of Loyalty Vietnam, leadership decided to expand the program to Thailand, Indonesia, the Philippines, and Taiwan.", action: "Documented the Loyalty playbook and ran enablement sessions to transfer strategy and operations know-how, localized tier thresholds and voucher values to match local spending behavior, and coordinated with Product to keep features scalable and configurable across markets.", result: "Scaled Shopee Rewards from 1 to 5 countries, and learned that strategic know-how, operational steps, and market understanding are success factors for global rollouts." } },
+      ] }, star: { situation: "Expanded the program to **Thailand, Indonesia, the Philippines, and Taiwan**.", action: ["Documented the Loyalty program **best practices** and ran **enablement sessions** to transfer strategy and operations know-how", "Localized **tier thresholds and voucher values** to match local spending behavior", "Coordinated with Product to develop **scalable features** across markets."], result: "Scaled Loyalty program to **4 countries**, and learned that strategic know-how, operational steps, and market understanding are **success factors for global rollouts**." } },
       { title: "Product Backlog Prioritization in Jira", icon: "dashboard", collage: { aspect: 1.109, items: [
         { src: shopeeBacklogJiraImage, alt: "Jira backlog board", x: 2.77, y: 3.07, w: 94.42, h: 44.36 },
         { src: shopeeBacklogCashbackImage, alt: "Shopee Rewards cashback screen", x: 2.77, y: 50.4, w: 35.24, h: 46.52, crop: { b: 0.1001 } },
         { src: shopeeBacklogVouchersImage, alt: "Loyalty voucher redemption screen", x: 38.41, y: 50.4, w: 27.86, h: 45.96, crop: { b: 0.11097 } },
         { src: shopeeBacklogChallengeImage, alt: "Shopee Rewards challenge screen", x: 66.27, y: 50.11, w: 30.96, h: 46.81 },
-      ] }, star: { situation: "The newly launched product had limited development, BA, and QA/AC resources to work with.", action: "Ranked backlog items by business impact, development effort, and strategic alignment, then conducted UAT and go-live testing iteratively across sprints while reporting weekly progress and commercial performance.", result: "Managed to launch the program after six months with must-have features in place to gather user feedback, and learned the importance of trade-offs and continuous improvement in product development." } },
+      ] }, star: { situation: "**Limited** development, BA, and QA/AC **resources** to develop Loyalty features.", action: "**Ranked backlog items** by business impact, development effort, and strategic alignment, then conducted UAT and go-live **iteratively across sprints** while weekly reporting **progress and performance** to ensure investment from management teams.", result: ["Launched the program after six months with **must-have features** to gather user feedback", "Learned the importance of **trade-offs and continuous improvement** in product development."] } },
     ],
   },
 ];

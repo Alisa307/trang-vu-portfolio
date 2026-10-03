@@ -80,8 +80,14 @@ function ProjectPanel({ project }: { project: Project }) {
                   {index + 1}
                 </span>
                 <div>
-                  <h4 className="text-base font-semibold capitalize text-foreground">{label}</h4>
-                  <p className="mt-1 text-base leading-7 text-muted-foreground">{text}</p>
+                  <h4 className="text-base capitalize text-foreground">{label}</h4>
+                  {Array.isArray(text) ? (
+                    <ul className="mt-1 list-disc space-y-1 pl-5 text-base leading-7 text-muted-foreground">
+                      {text.map((item) => <li key={item}><Emphasis text={item} /></li>)}
+                    </ul>
+                  ) : (
+                    <p className="mt-1 text-base leading-7 text-muted-foreground"><Emphasis text={text} /></p>
+                  )}
                 </div>
               </section>
             ))}
