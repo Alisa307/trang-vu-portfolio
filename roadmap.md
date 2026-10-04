@@ -17,14 +17,14 @@
 
 ## Interactive work-project revision
 
-- [ ] Replace the About copy and emphasis with the supplied wording
-- [ ] Tighten the Work Projects heading and country spacing
-- [ ] Add supplied country flags with backgrounds blended into the page
-- [ ] Replace project image cards with three selectable project tabs per country
-- [ ] Build inline STAR case-study panels with adapted project visuals
-- [ ] Add the supplied Germany and Thailand project details
-- [ ] Confirm or retain the Vietnam project content
-- [ ] Verify desktop and mobile project interactions
+- [x] Replace the About copy and emphasis with the supplied wording
+- [x] Tighten the Work Projects heading and country spacing
+- [x] Add supplied country flags with backgrounds blended into the page
+- [x] Replace project image cards with three selectable project tabs per country
+- [x] Build inline STAR case-study panels with adapted project visuals
+- [x] Add the supplied Germany and Thailand project details
+- [x] Confirm or retain the Vietnam project content
+- [x] Verify desktop and mobile project interactions
 
 ## Content and image update
 
@@ -34,3 +34,9 @@
 - [x] Update the MediFlow role to Co-developer
 - [x] Rename the No More Lies image title to Digital Marketing Workshop
 - [x] Verify the affected content and imagery on desktop and mobile
+
+## AI-based Learning Platform rewrite
+
+- [x] Rewrite Situation, Action, Result as three bolded-accent paragraphs
+- [x] Apply bold markup inside the numbered step panels
+- [x] Verify the section on desktop and mobile
