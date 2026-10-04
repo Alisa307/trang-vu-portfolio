@@ -40,3 +40,4 @@
 - [x] Rewrite Situation, Action, Result as three bolded-accent paragraphs
 - [x] Apply bold markup inside the numbered step panels
 - [x] Verify the section on desktop and mobile
+- [x] Drop the numbered Situation/Action/Result labels in favour of plain bullets
