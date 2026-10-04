@@ -77,10 +77,10 @@ export function ProfileShowcase({ projects, idPrefix }: { projects: ProfileProje
                         <span className="flex size-11 items-center justify-center rounded-full bg-accent text-sm font-semibold text-accent-foreground">{index + 1}</span>
                         <div>
                           <h4 className="text-base text-foreground">{step.label}</h4>
-                          {step.text && <p className="mt-1 text-base leading-7 text-muted-foreground">{step.text}</p>}
+                          {step.text && <p className="mt-1 text-base leading-7 text-muted-foreground"><Emphasis text={step.text} /></p>}
                           {step.points && (
                             <ul className="mt-1 list-disc space-y-1 pl-5 text-base leading-7 text-muted-foreground">
-                              {step.points.map((point) => <li key={point}>{point}</li>)}
+                              {step.points.map((point) => <li key={point}><Emphasis text={point} /></li>)}
                             </ul>
                           )}
                         </div>
