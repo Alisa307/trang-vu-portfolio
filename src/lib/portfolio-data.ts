@@ -209,10 +209,10 @@ export const researchProjects: ProfileProject[] = [
     location: "Darmstadt, Germany",
     role: "Innovation Coordination",
     note: "Top 2 best innovation project of the semester with 1.3/4.0 Grade",
-    steps: [
-      { label: "Situation", text: "**Develop AI-based Learning Platform** to help **German companies** to develop **Smart Factory**." },
-      { label: "Action", text: "**Conducted Market Research & Competitor Analysis**, applied the **Design Thinking Model** to define **customer needs** and underserved **market gaps**, and built **Prototypes** to gather **user feedbacks**." },
-      { label: "Result", text: "**Got the prototypes' approval** and good **user feedbacks** to bring the **Prototypes** to the **live project** at **AONIC**." },
+    points: [
+      "**Develop AI-based Learning Platform** to help **German companies** to develop **Smart Factory**.",
+      "**Conducted Market Research & Competitor Analysis**, applied the **Design Thinking Model** to define **customer needs** and underserved **market gaps**, and built **Prototypes** to gather **user feedbacks**.",
+      "**Got the prototypes' approval** and good **user feedbacks** to bring the **Prototypes** to the **live project** at **AONIC**.",
     ],
     imageTitle: "AI Learning Platform of Manufacturing & Big Data",
     collage: {
